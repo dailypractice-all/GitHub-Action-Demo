@@ -16,4 +16,4 @@ jobs:
       - name: "Say hello Gaurav It's Friday"
         run: echo "$Greeting $First_Name is using $cloud"
         env:
-          First_name: Gaurav
+          First_Name: Gaurav
