@@ -1,0 +1,27 @@
+name: Sum Two Numbers
+
+on:
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: "Enter first number"
+        required: true
+        default: "0"
+      number2:
+        description: "Enter second number"
+        required: true
+        default: "0"
+
+jobs:
+  sum-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: |
+          echo "Number 1: ${{ github.event.inputs.number1 }}"
+          echo "Number 2: ${{ github.event.inputs.number2 }}"
+
+      - name: Calculate sum
+        run: |
+          sum=$(( ${{ github.event.inputs.number1 }} + ${{ github.event.inputs.number2 }} ))
+          echo "Sum of numbers is: $sum"
